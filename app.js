@@ -7,6 +7,7 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var prospects = require('./routes/prospects');
+var teams = require('./routes/teams');
 var restful = require('node-restful');
 
 var mongoose = require('mongoose');
@@ -20,6 +21,7 @@ mongoose.connect('mongodb://localhost/LHL')
   .catch((err) => console.error(err));
 
 app.use('/prospects', prospects);
+app.use('/teams', teams);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
